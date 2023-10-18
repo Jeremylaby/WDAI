@@ -1,0 +1,24 @@
+.Main_header {
+    background-color: rgb(11, 82, 144);
+    padding: 14px 25px;
+    height: 100px;
+    width: 500px;
+    font-family: 'AR One Sans', sans-serif;
+    border-style: ridge;
+    border-width: medium;
+    border-color: black ;
+
+}
+.background{    
+    background-color: white;
+    padding: :50p;
+
+}
+h1{
+    padding: 14px 25px;
+    font-family: 'AR One Sans', sans-serif;
+}
+body {
+    background-color: rgb(180, 181, 183);
+
+}
