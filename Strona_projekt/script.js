@@ -6,6 +6,8 @@ const Wrapper = document.querySelector("Wrapper");
 const git = document.getElementById("git");
 const images = ["images/github-logo.PNG", "images/github-mark.PNG"];
 const modes = ["moon-sharp", "sunny"];
+const music = document.querySelector(".losuj");
+music.addEventListener("click", PlayRandom);
 let currImageIndex = 0;
 button.addEventListener("click", change_to_dark_mode);
 toggle.addEventListener("click", display_items);
@@ -21,12 +23,26 @@ function change_to_dark_mode() {
 }
 
 var player;
-
+function SubmitValue() {
+  const university = document.getElementById("university").value;
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+  const comment = document.getElementById("comment").value;
+  if (university === "PK") {
+    alert("AJAJAJA Cringe");
+    window.open("https://www.youtube.com/watch?v=-APGFXVjsMs");
+    body.style.backgroundImage = "url('images/Stickman.gif')";
+    return false;
+  }
+}
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
-    height: "50%",
-    width: "80%",
+    width: "100%",
+    higtht: "auto",
+    display: "flex",
     events: {
+      onStateChange: onPlayerStateChange,
       onReady: onPlayerReady,
     },
     playerVars: {
@@ -37,10 +53,17 @@ function onYouTubeIframeAPIReady() {
     },
   });
 }
-
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.ENDED) {
+    PlayRandom();
+  }
+}
 function onPlayerReady(event) {
+  PlayRandom();
+}
+function PlayRandom() {
   num = Math.floor(Math.random() * 32);
   setTimeout(() => {
     player.playVideoAt(num);
-  }, 2000);
+  }, 1000);
 }
