@@ -35,11 +35,17 @@ function SubmitValue() {
     body.style.backgroundImage = "url('images/Stickman.gif')";
     return false;
   }
+  console.log(university);
+  console.log(name);
+  console.log(phone);
+  console.log(email);
+  console.log(comment);
+  alert("Spotkanie umuwione ");
 }
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
     width: "100%",
-    higtht: "auto",
+    height: "400px",
     display: "flex",
     events: {
       onStateChange: onPlayerStateChange,

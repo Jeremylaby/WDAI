@@ -84,32 +84,34 @@
         <div class="player-conteiner">
         <div id="player"></div>
         <div class="losuj"><p>Losuj</p><img src="images/YES.png"></div>
+        <form class="myForm" onsubmit="return SubmitValue();">
+          <br>
+          <label>Podaj na jakiej uczelni studiujesz</label>
+          <select id="university" name="university" required>
+              <option value="">Wybierz uczelnię</option>
+              <option value="UJ">UJ</option>
+              <option value="AGH">AGH</option>
+              <option value="UEK">UEK</option>
+              <option value="PK">PK</option>
+              <option value="inna">inna</option>
+          
+        </select>
+        <label for="name">Imię:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="phone">Numer telefonu:</label>
+            <input type="tel" id="phone" name="phone" placeholder="666-666-666" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
+            
+            <label for="email">Adres e-mail:</label>
+            <input type="email" id="email" name="email" placeholder="john.smith@gmail.com" required>
+            
+            <label for="comment">Dodatkowy komentarz:</label>
+            <textarea id="comment" name="comment" placeholder="komentarz"></textarea>
+            
+            <input type="submit" value="Wyślij">
+      </form>
       </div>
-      <form class="myForm" onsubmit="return SubmitValue();">
-      <label>Podaj na jakiej uczelni studiujesz</label>
-      <select id="university" name="university" required>
-        <option value="">Wybierz uczelnię</option>
-          <option value="UJ">UJ</option>
-          <option value="AGH">AGH</option>
-          <option value="UEK">UEK</option>
-          <option value="PK">PK</option>
-          <option value="inna">inna</option>
       
-    </select><br>
-    <label for="name">Imię:</label>
-        <input type="text" id="name" name="name" required><br>
-        
-        <label for="phone">Numer telefonu:</label>
-        <input type="tel" id="phone" name="phone" placeholder="666-666-666" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"><br>
-        
-        <label for="email">Adres e-mail:</label>
-        <input type="email" id="email" name="email" placeholder="john.smith@gmail.com" required><br>
-        
-        <label for="comment">Dodatkowy komentarz:</label><br>
-        <textarea id="comment" name="comment" placeholder="komentarz"></textarea><br>
-        
-        <input type="submit" value="Wyślij">
-  </form>
         <ul class="social-menu">
           <li style="--i: 2">
             <a
