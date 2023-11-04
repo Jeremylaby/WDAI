@@ -7,10 +7,44 @@ const git = document.getElementById("git");
 const images = ["images/github-logo.PNG", "images/github-mark.PNG"];
 const modes = ["moon-sharp", "sunny"];
 const music = document.querySelector(".losuj");
-music.addEventListener("click", PlayRandom);
+const pets = document.querySelector(".pets");
+const lake = document.querySelector(".lake");
+const sea = document.querySelector(".sea");
+const village = document.querySelector(".village");
+if (pets != null) {
+  const pets_header = pets.querySelector(".pets-header");
+  pets_header.addEventListener("click", () => {
+    DisplayGallery(pets, pets_header);
+  });
+}
+if (lake != null) {
+  const lake_header = lake.querySelector(".lake-header");
+  lake_header.addEventListener("click", () => {
+    DisplayGallery(lake, lake_header);
+  });
+}
+if (sea != null) {
+  const sea_header = sea.querySelector(".sea-header");
+  sea_header.addEventListener("click", () => {
+    DisplayGallery(sea, sea_header);
+  });
+}
+if (village != null) {
+  const village_header = village.querySelector(".village-header");
+  village_header.addEventListener("click", () => {
+    DisplayGallery(village, village_header);
+  });
+}
+if (music != null) {
+  music.addEventListener("click", PlayRandom);
+}
 let currImageIndex = 0;
-button.addEventListener("click", change_to_dark_mode);
-toggle.addEventListener("click", display_items);
+if (button != null) {
+  button.addEventListener("click", change_to_dark_mode);
+}
+if (toggle != null) {
+  toggle.addEventListener("click", display_items);
+}
 function display_items() {
   menu.classList.toggle("active");
 }
@@ -18,7 +52,9 @@ function change_to_dark_mode() {
   currImageIndex = (currImageIndex + 1) % images.length;
   button.querySelector("ion-icon").setAttribute("name", modes[currImageIndex]);
   const newImage = images[currImageIndex];
-  git.src = newImage;
+  if (git != null) {
+    git.src = newImage;
+  }
   body.classList.toggle("dark");
 }
 
@@ -72,4 +108,22 @@ function PlayRandom() {
   setTimeout(() => {
     player.playVideoAt(num);
   }, 1000);
+}
+function DisplayGallery(gallery, header) {
+  const galleryContent = gallery.querySelector(".gallery-content");
+  console.log(window.getComputedStyle(galleryContent).display);
+  if (window.getComputedStyle(galleryContent).display == "none") {
+    galleryContent.style.display = "block";
+    header.style.borderRadius = "45px 45px 0px 0px";
+    header.style.borderStyle = "none";
+    gallery.style.borderStyle = "solid";
+
+    console.log(window.getComputedStyle(galleryContent).display);
+  } else {
+    galleryContent.style.display = "none";
+    header.style.borderRadius = "45px";
+    gallery.style.borderStyle = "none";
+    header.style.borderStyle = "solid";
+    console.log(window.getComputedStyle(galleryContent).display);
+  }
 }

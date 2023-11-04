@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.gallery {
+  width: 300px;
+  overflow: hidden;
+}
+
+.gallery-header {
+  background: url("images/front-page-photo.jpg"); /* Ustaw obraz jako tło */
+  background-size: cover; /* Dopasuj obraz do tła */
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.gallery-content {
+  display: none;
+  padding: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
