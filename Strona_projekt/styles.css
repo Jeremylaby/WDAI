@@ -426,6 +426,7 @@ footer {
   position: relative;
 }
 .dark .Wrapper-sub {
+  border: 2px solid black;
   background: white;
   color: #161414e6;
 }
@@ -681,6 +682,7 @@ footer {
   border-radius: 45px;
   position: relative;
   width: 100%;
+  transition: 0.5s;
 }
 .photo-conteiner {
   padding-top: 5%;
@@ -688,8 +690,15 @@ footer {
   flex-direction: row;
 }
 .photo-conteiner img {
-  padding-left: 6%;
+  transition: 0.3s;
+  opacity: 0.2;
+  color: rgba(255, 255, 255, 0.288);
+  border-style: solid;
+  margin-left: 6%;
   width: 41%;
+}
+.photo-conteiner img:hover {
+  opacity: 1;
 }
 .gallery .pets,
 .lake,
@@ -702,6 +711,53 @@ footer {
   flex-direction: column;
   width: 80%;
   border-radius: 45px;
+}
+.games {
+  grid-area: 2/1/3/3;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 2%;
+}
+.game-des {
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
+.link {
+  text-decoration: none;
+  color: #0074d9;
+}
+
+.comment-container {
+  position: relative;
+  color: black;
+  display: inline-block;
+}
+.description {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  width: 30vw;
+}
+.link:hover + .description {
+  display: block;
+}
+.video iframe {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+}
+.video {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding-bottom: 40%;
+  justify-content: center;
 }
 @media only screen and (max-width: 1100px) {
   .parent {
@@ -763,6 +819,9 @@ footer {
   }
 }
 @media only screen and (max-width: 620px) {
+  .photo-conteiner img {
+    opacity: 1;
+  }
   .parent-wrap {
     display: none;
   }

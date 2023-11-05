@@ -48,6 +48,7 @@ if (toggle != null) {
 function display_items() {
   menu.classList.toggle("active");
 }
+
 function change_to_dark_mode() {
   currImageIndex = (currImageIndex + 1) % images.length;
   button.querySelector("ion-icon").setAttribute("name", modes[currImageIndex]);
@@ -81,7 +82,7 @@ function SubmitValue() {
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
     width: "100%",
-    height: "400px",
+    position: "absolute",
     display: "flex",
     events: {
       onStateChange: onPlayerStateChange,

@@ -1,23 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles2.css" />
-    <title>Rozsuwana Galeria</title>
+    <style>
+      /* Styl dla odnośnika */
+      .link {
+        text-decoration: none;
+        color: #0074d9; /* Kolor odnośnika */
+      }
+
+      /* Styl dla kontenera komentarza */
+      .comment-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* Styl dla krótkiego opisu (domyślnie ukrytego) */
+      .description {
+        position: absolute;
+        top: 100%; /* Położenie opisu pod odnośnikiem */
+        left: 0;
+        display: none;
+        background: #fff; /* Tło opisu */
+        border: 1px solid #ccc; /* Ramka opisu */
+        padding: 5px;
+        z-index: 1;
+        width: 200px; /* Szerokość opisu */
+        text-align: left;
+      }
+
+      /* Styl do pokazania krótkiego opisu po najechaniu */
+      .link:hover + .description {
+        display: block;
+      }
+    </style>
   </head>
   <body>
-    <div class="gallery">
-      <div class="gallery-header">
-        <h1>Tytuł Galerii</h1>
-      </div>
-      <div class="gallery-content">
-        <img src="images/AGH3.png" alt="Zdjęcie 1" />
-        <img src="images/cove.png" alt="Zdjęcie 2" />
-        <img src="images/armata.png" alt="Zdjęcie 3" />
-        <!-- Dodaj więcej zdjęć według potrzeb -->
-      </div>
+    <div>
+      to jest bardzo bardzo bardzo długi wstęp. To jest tekst z
+      <span class="comment-container"
+        ><a class="link" href="#">twoim linkiem</a
+        ><span class="description"
+          >To jest krótki opis, który pojawia się po najechaniu na
+          odnośnik.</span
+        ></span
+      >
+      wewnątrz.
     </div>
-    <script src="script2.js"></script>
   </body>
 </html>
