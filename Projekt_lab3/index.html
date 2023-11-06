@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista produktów</title>
+  </head>
+  <body>
+    <ul id="product-list"></ul>
+
+    <script>
+      // Pobranie danych JSON
+      fetch("https://dummyjson.com/products")
+        .then((response) => response.json())
+        .then((data) => {
+          // Ograniczenie do pierwszych 30 elementów
+          const first30Products = data.slice(0, 30);
+
+          // Znajdź element <ul> na stronie
+          const productList = document.getElementById("product-list");
+
+          // Iteracja przez pierwsze 30 produktów
+          first30Products.forEach((product) => {
+            // Tworzenie elementów HTML
+            const listItem = document.createElement("li");
+            const title = document.createElement("h3");
+            const description = document.createElement("p");
+            const icon = document.createElement("img");
+
+            // Ustawienie zawartości elementów
+            title.textContent = product.name;
+            description.textContent = product.description;
+            icon.src = product.icon;
+
+            // Dodanie elementów do listy
+            listItem.appendChild(title);
+            listItem.appendChild(description);
+            listItem.appendChild(icon);
+            productList.appendChild(listItem);
+          });
+        })
+        .catch((error) => {
+          console.error("Błąd pobierania danych:", error);
+        });
+    </script>
+  </body>
+</html>

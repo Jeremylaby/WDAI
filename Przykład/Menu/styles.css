@@ -116,6 +116,10 @@ ul.sub li a:hover {
 }
 
 /* sub display*/
+ul.primary li:hover ul {
+  display: block;
+  background: #fff;
+}
 
 /* keeps the tab background white */
 ul.primary li:hover a {
