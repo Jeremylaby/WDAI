@@ -6,11 +6,8 @@ const resultsconteiner = document.getElementById("results-conteiner");
 const finalscore = document.getElementById("final-points");
 const tryagain = document.getElementById("try-again");
 const zobiesAll = {};
-const loginconteiner = document.getElementById("login-conteiner");
-const nick = document.getElementById("nick");
 const scales = [0.5, 0.5, 0.5, 1, 1, 1, 1.5, 1.5, 2];
 const body = document.querySelector("body");
-
 let gameupdateInterval;
 let numberofZombies = 0;
 let scorepoints = 0;
@@ -125,34 +122,8 @@ function GameOver() {
     zombie.remove();
   });
   board.removeEventListener("click", missed);
-  OpenJson();
-  if (scoredpoints > scoresdata.leaderboard[9].score) {
-    AddNewPlayer();
-    return;
-  }
-  DispplayResults();
-}
-function OpenJson() {
-  fetch("./highscores.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("cos poszlo nie tak");
-      }
-      return response.json;
-    })
-    .then((data) => {
-      const scoresdata = data;
-    })
-    .catch((error) => {
-      console.error("cos poszlo nie tak", error);
-    });
-}
-function AddNewPlayer() {
-  loginconteiner.style.display = "flex";
-}
-function DispplayResults() {
+  resultsconteiner.style.display = "flex";
   finalscore.textContent = scorepoints;
   tryagain.addEventListener("click", PlayAgain);
-  resultsconteiner.style.display = "flex";
 }
 document.addEventListener("DOMContentLoaded", () => StartGame());
