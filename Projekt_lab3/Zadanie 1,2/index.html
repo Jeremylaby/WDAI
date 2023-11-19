@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <label for="category">Wybierz opcję:</label>
+    <select id="category" name="category" onchange="SearchItems()">
+      <option value="default">default</option>
+      <option value="smartphones">smartphones</option>
+      <option value="laptops">laptops</option>
+      <option value="fragrances">fragrances</option>
+      <option value="skincare">skincare</option>
+      <option value="groceries">groceries</option>
+      <option value="home-decoration">home-decoration</option>
+    </select>
+    <input type="text" id="searched-phrase" oninput="SearchItems()" />
+    <div class="controls">
+      Sortuj:
+      <div class="asc">ASC</div>
+      <div class="dsc">DSC</div>
+      <div class="default">Brak</div>
+    </div>
+    <div id="main-list"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

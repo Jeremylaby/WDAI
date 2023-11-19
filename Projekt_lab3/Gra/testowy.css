@@ -1,0 +1,42 @@
+body {
+  width: 100%;
+  height: 100vh;
+  cursor: url("images/aim2.png") 50 50, auto;
+  background-image: url("images/board-bg.jpg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+#board {
+  width: 100%;
+  height: 100%;
+}
+#stats {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  margin-top: 1%;
+}
+#health img {
+  width: 8%;
+  margin-left: 1%;
+}
+#score {
+  font-size: 4rem;
+}
+#score-conteiner {
+  background-color: rgb(20, 160, 79);
+  border-radius: 10px;
+}
+.zombie {
+  left: 50vw;
+  position: absolute;
+  width: 200px;
+  height: 312px;
+  background: url("images/walkingdead.png");
+  background-position-x: 0px;
+}
