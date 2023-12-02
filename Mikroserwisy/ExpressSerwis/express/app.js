@@ -15,6 +15,24 @@ models.sequelize.sync({ force: true })
         job: 'It'
       });
     })
+models.sequelize.sync({ force: true })
+    .then(() => {
+        console.log('Database & tables created successfully');
+        return models.PersonSchema.create({
+            name: 'Grzes',
+            surname: 'Barycki',
+            job: 'Student'
+        });
+
+    })
+models.sequelize.sync({ force: true })
+    .then(() => {
+        return models.PersonSchema.create({
+            name: 'Michal',
+            surname: 'Barycki',
+            job: 'Economy'
+        });
+    })
     .then(() => {
       console.log('Person created successfully');
     })
