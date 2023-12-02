@@ -64,26 +64,7 @@ body {
   height: 312px;
   background: url("images/walkingdead.png");
 }
-#results-conteiner {
-  position: absolute;
-  display: none;
-  font-size: 3rem;
-  flex-direction: column;
-  width: 30%;
-  margin-top: 20%;
-  margin-left: 40%;
-  border-style: solid;
-  background-color: rgba(24, 24, 24, 0.784);
-  justify-content: center;
-  align-items: center;
-}
-#try-again {
-  cursor: pointer;
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  z-index: 3;
-}
+#results-conteiner,
 #login-conteiner {
   position: absolute;
   display: none;
@@ -96,4 +77,18 @@ body {
   background-color: rgba(24, 24, 24, 0.784);
   justify-content: center;
   align-items: center;
+}
+#leaderboard {
+  font-size: 1rem;
+}
+#try-again,
+#submit,
+#nick {
+  cursor: pointer;
+  border-style: solid;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  z-index: 30;
+  margin-top: 1%;
 }
