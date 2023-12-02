@@ -8,10 +8,31 @@ const tryagain = document.getElementById("try-again");
 const zobiesAll = {};
 const scales = [0.5, 0.5, 0.5, 1, 1, 1, 1.5, 1.5, 2];
 const body = document.querySelector("body");
+const login_conteiner = document.getElementById("login-conteiner");
+const new_nick = document.getElementById("nick");
+const leaderboard = document.getElementById("leaderboard");
+
+let nick;
+let leaderboard_data;
 let gameupdateInterval;
 let numberofZombies = 0;
 let scorepoints = 0;
 let healthpoints = 0;
+function OdczytajBazeDanych() {
+  fetch("./highscores.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      leaderboard_data = data.leaderboard;
+    })
+    .catch((error) => {
+      console.error("Wystąpił problem podczas operacji fetch:", error);
+    });
+}
 
 function DisplayScore() {
   if (scorepoints > 0) {
@@ -122,8 +143,51 @@ function GameOver() {
     zombie.remove();
   });
   board.removeEventListener("click", missed);
+  if (leaderboard_data[9].score < scorepoints) {
+    DisplayLoginMenu();
+    return;
+  }
+  DisplayPlayAgain();
+}
+function DisplayLoginMenu() {
+  login_conteiner.style.display = "flex";
+  const submit = document.getElementById("submit");
+  submit.addEventListener("click", AddNewBest);
+}
+function AddNewBest() {
+  nick = new_nick.value;
+  submit.removeEventListener("click", AddNewBest);
+  login_conteiner.style.display = "none";
+  const nowyWynik = { player: nick, score: scorepoints };
+  leaderboard_data.push(nowyWynik);
+  leaderboard_data.sort((a, b) => b.score - a.score);
+  leaderboard_data = leaderboard_data.slice(0, 10);
+  fetch("./highscores.json", {
+    method: "POST", // Możesz również użyć 'PUT' w zależności od konfiguracji serwera
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ leaderboard_data }),
+  });
+  DisplayPlayAgain();
+}
+function DisplayPlayAgain() {
+  let newtext = "";
+  for (let i = 0; i < 10; i++) {
+    newtext +=
+      "1: " +
+      leaderboard_data[i].player +
+      " score: " +
+      leaderboard_data[i].score +
+      "<br>";
+  }
+  leaderboard.innerHTML = "";
+  leaderboard.innerHTML = newtext;
   resultsconteiner.style.display = "flex";
   finalscore.textContent = scorepoints;
   tryagain.addEventListener("click", PlayAgain);
 }
-document.addEventListener("DOMContentLoaded", () => StartGame());
+document.addEventListener("DOMContentLoaded", () => {
+  OdczytajBazeDanych();
+  StartGame();
+});
