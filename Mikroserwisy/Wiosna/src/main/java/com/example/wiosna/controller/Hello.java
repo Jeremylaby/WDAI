@@ -15,9 +15,13 @@ import java.util.Map;
 public class Hello {
     @Autowired
     private PersonServiceImpl personService;
+    @GetMapping("/")
+    public String just_hello(){
+        return "Hello World";
+    }
     @GetMapping("/hello")
     public ResponseEntity<Map<String,String>> hello(@RequestParam(value = "name", defaultValue = "John") String name){
-        Map<String,String> json= Map.of("message", "Cześć " + name);
+        Map<String,String> json= Map.of("message", "Czesc " + name);
         return new ResponseEntity<>(json, HttpStatus.OK);
     }
     @GetMapping("/person")
