@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0660c417-e478-4324-a8d3-d4091f21d23d" name="Changes" comment="" />
+    <list default="true" id="0660c417-e478-4324-a8d3-d4091f21d23d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Flask1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Flask1/.idea/Flask1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Flask1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Flask1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Flask1/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/express/bin/data/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/express/bin/data/database.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask1/app.py/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Flask1/app.py/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/.gradle/8.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/.gradle/8.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/.gradle/8.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/.gradle/8.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/.gradle/8.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/.gradle/8.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/.gradle/8.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/.gradle/8.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/.gradle/8.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/.gradle/8.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/build/classes/java/main/com/example/wiosna/controller/Hello.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/build/classes/java/main/com/example/wiosna/controller/Hello.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/build/resources/main/templates/hello.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/build/resources/main/templates/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/build/tmp/compileJava/compileTransaction/stash-dir/Hello.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/build/tmp/compileJava/compileTransaction/stash-dir/Hello.class.uniqueId0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/data/demo.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/data/demo.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wiosna/src/main/java/com/example/wiosna/controller/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Wiosna/src/main/java/com/example/wiosna/controller/Hello.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +77,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/stas69/Documents/Studia/WDAI/Mikroserwisy/Wiosna",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -75,6 +101,7 @@
       <workItem from="1701542789244" duration="363000" />
       <workItem from="1701617784377" duration="4223000" />
       <workItem from="1701685159660" duration="623000" />
+      <workItem from="1701689905898" duration="114000" />
     </task>
     <servers />
   </component>
