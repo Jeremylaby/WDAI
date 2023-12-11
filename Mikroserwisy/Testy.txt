@@ -102,7 +102,7 @@ fetch('http://localhost:8080/update/1', {
 .catch(error => console.error('Error:', error));
 Express
  create 
-fetch('http://localhost:3000/create', {
+fetch('http://localhost:3000/person', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -114,7 +114,7 @@ fetch('http://localhost:3000/create', {
 .catch(error => console.error('Error:', error));
 
 Update 
-fetch('http://localhost:2137/person/1', {
+fetch('http://localhost:3000/delete/1', {
     method: 'PUT',
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
