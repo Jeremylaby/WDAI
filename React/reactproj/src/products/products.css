@@ -34,13 +34,45 @@
 
 .product-img {
     width: 45%;
+    object-fit: contain;
 
 }
 
 .product-description {
     font-style: italic;
+    font-size: min(1.5vw, 15px);
+    margin-top: 5%;
+    margin-bottom: 5%;
 
 }
-.dsc{
+.Dsc,.Asc,.Default{
     cursor: pointer;
+}
+.product-footer{
+    display: flex;
+    justify-content: space-between;
+    font-size: min(2vw, 20px);
+}
+.sort-buttons{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+.sort-buttons div{
+    margin-left: 10%;
+    border-style: solid;
+    width: 50%;
+}
+.button-conteiner{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+
+}
+.buttons{
+    height: 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
