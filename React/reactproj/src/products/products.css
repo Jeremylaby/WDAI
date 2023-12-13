@@ -1,11 +1,12 @@
-.products-list{
+.products-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
 }
-.product-card{
+
+.product-card {
     width: 40%;
     padding: 5% 5% 5% 5%;
     margin-top: 2%;
@@ -15,24 +16,31 @@
     position: relative;
     background-color: black;
 }
-.product-conteiner{
+
+.product-conteiner {
     display: flex;
     flex-direction: row;
 }
-.product-properties{
+
+.product-properties {
     word-wrap: break-word;
-    font-size: min(2vw,20px);
+    font-size: min(2vw, 20px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
     margin-left: 5%;
 }
-.product-img{
+
+.product-img {
     width: 45%;
 
 }
-.product-description{
+
+.product-description {
     font-style: italic;
 
+}
+.dsc{
+    cursor: pointer;
 }
