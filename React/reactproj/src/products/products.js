@@ -8,6 +8,8 @@ import product from "./Product";
 function Products() {
     const [data, setData] = useState([]);
     const [productsdata, setProductsData] = useState([]);
+    const [category, setcategory] = useState("default")
+    const [searchePhrase, setSearcePhrase] = useState("")
 
 
     useEffect(() => {
@@ -22,6 +24,7 @@ function Products() {
     }, []);
 
     const sortItems = (type) => {
+
         let dataToSort = [...productsdata]
         switch (type) {
             case "dsc":
@@ -47,17 +50,57 @@ function Products() {
             return dataToSort;
         }
     }
+
     const searchItems = (e) => {
-        let searchPhrase = e.target.value
-        console.log(searchPhrase)
-        setProductsData(data.filter((product) => product.title.toLowerCase().includes(searchPhrase)))
+        setSearcePhrase(e.target.value)
+        console.log(e.target.value)
+        if (category == "default") {
+            setProductsData(data.filter((product) => product.title.toLowerCase().includes(e.target.value)))
+        } else {
+            setProductsData(data.filter((product) => product.title.toLowerCase().includes(e.target.value) && product.category == category))
+        }
+
     }
-    return (<><div className="button-conteiner"><div className="buttons"><div className="sort-buttons">
-        <div className={"Dsc"} onClick={() => sortItems('dsc')}>DSC</div>
-        <div className={"Asc"} onClick={() => sortItems('asc')}>ASC</div>
-        <div className={"Default"} onClick={() => sortItems('none')}>DEFAULT</div></div>
-        <input type="text" placeholder={"search"} onChange={(e)=>searchItems(e)}/></div>
-    </div>
+    const categoryItems = (e) => {
+        if (e.target.value != "default") {
+            setProductsData(data.filter((product) => product.title.toLowerCase().includes(searchePhrase) && product.category == e.target.value))
+        } else {
+            setProductsData(data.filter((product) => product.title.toLowerCase().includes(searchePhrase)))
+        }
+
+
+    }
+    return (<>
+        <div className="button-conteiner">
+            <div className="buttons">
+                <div className="sort-buttons">
+                    <div className={"Dsc"} onClick={() =>
+                        sortItems('dsc')
+                    }>DSC
+                    </div>
+                    <div className={"Asc"} onClick={() =>
+                        sortItems('asc')
+                    }>ASC
+                    </div>
+                    <div className={"Default"} onClick={() =>
+                        sortItems('none')
+                    }>DEFAULT
+                    </div>
+                </div>
+                <div><select id="category" name="category" onChange={(e) => {
+                    setcategory(e.target.value);
+                    categoryItems(e)
+                }}>
+                    <option value="default">default</option>
+                    <option value="smartphones">smartphones</option>
+                    <option value="laptops">laptops</option>
+                    <option value="fragrances">fragrances</option>
+                    <option value="skincare">skincare</option>
+                    <option value="groceries">groceries</option>
+                    <option value="home-decoration">home-decoration</option>
+                </select></div>
+                <input type="text" placeholder={"search"} onChange={(e) => searchItems(e)}/></div>
+        </div>
         <ProductsList products={productsdata}/></>)
 }
 
