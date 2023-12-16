@@ -1,4 +1,4 @@
-import Menu from "./Menu";
+
 import kotwbutach from "./images/kotwbutach.jpeg";
 import React from "react";
 

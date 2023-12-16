@@ -52,12 +52,12 @@ function Products() {
     }
 
     const searchItems = (e) => {
-        setSearcePhrase(e.target.value)
+        setSearcePhrase(e.target.value.toLowerCase())
         console.log(e.target.value)
         if (category == "default") {
-            setProductsData(data.filter((product) => product.title.toLowerCase().includes(e.target.value)))
+            setProductsData(data.filter((product) => product.title.toLowerCase().includes(e.target.value.toLowerCase())))
         } else {
-            setProductsData(data.filter((product) => product.title.toLowerCase().includes(e.target.value) && product.category == category))
+            setProductsData(data.filter((product) => product.title.toLowerCase().includes(e.target.value.toLowerCase()) && product.category == category))
         }
 
     }
@@ -67,6 +67,16 @@ function Products() {
         } else {
             setProductsData(data.filter((product) => product.title.toLowerCase().includes(searchePhrase)))
         }
+
+
+    }
+    const handleEdit = (product,id)=>{
+        let newData=[...data]
+        newData[id-1]=product
+        setData(newData)
+        newData=[...productsdata]
+        newData[id-1]=product
+        setProductsData(newData)
 
 
     }
@@ -101,7 +111,7 @@ function Products() {
                 </select></div>
                 <input type="text" placeholder={"search"} onChange={(e) => searchItems(e)}/></div>
         </div>
-        <ProductsList products={productsdata}/></>)
+        <ProductsList products={productsdata} onEdit={handleEdit}/></>)
 }
 
 export default Products

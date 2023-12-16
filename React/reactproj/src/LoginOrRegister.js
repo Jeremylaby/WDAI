@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import axios from 'axios';
 
 const LoginOrRegister = ({onLogin}) => {
     const [username, setUsername] = useState('');

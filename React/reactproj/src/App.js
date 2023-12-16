@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes,Router} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Products from "./products/products";
 import React, {useState} from "react";
 import Layout from "./Menu";
