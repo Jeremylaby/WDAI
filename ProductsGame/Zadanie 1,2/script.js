@@ -30,19 +30,43 @@ document.addEventListener("DOMContentLoaded", () => {
 function displayElements(products) {
   //Wyświetla wybrane elementy
   mainlist.innerHTML = "";
+  let counter=0;
   products.forEach((product) => {
-    const listitem = document.createElement("div");
-    const ItemImage = document.createElement("img");
-    const ItemHeader = document.createElement("h2");
-    const ItemDescription = document.createElement("p");
-    ItemHeader.textContent = product.title;
-    ItemImage.src = product.thumbnail;
-    ItemDescription.textContent = product.description;
-    listitem.classList.add("list-item");
-    listitem.appendChild(ItemHeader);
-    listitem.appendChild(ItemImage);
-    listitem.appendChild(ItemDescription);
-    mainlist.appendChild(listitem);
+    const card = document.createElement("div");
+    const cardBody = document.createElement("div");
+    const cardImg = document.createElement("img");
+    const cardTitle = document.createElement("h5");
+    const cardText = document.createElement("p");
+    const column = document.createElement("div");
+    let row;
+    if(counter%2===0){
+      row=document.createElement("div");
+      row.classList.add("row");
+      row.style.marginTop="10px"
+    }else{
+      row = mainlist.lastElementChild;
+    }
+    column.classList.add("col-sm");
+    cardTitle.textContent = product.title;
+    cardImg.src = product.thumbnail;
+    cardText.textContent = product.description;
+    card.classList.add("card");
+    card.classList.add("text-bg-dark");
+    cardImg.classList.add("card-img-top")
+    cardBody.classList.add("card-body")
+    cardTitle.classList.add("card-title")
+    cardText.classList.add("card-text")
+    card.appendChild(cardImg);
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardText);
+    card.appendChild(cardBody);
+    card.style.width="80%"
+    column.appendChild(card)
+    row.appendChild(column)
+    if(counter%2===0) {
+      mainlist.appendChild(row);
+    }
+    counter++;
   });
 }
 function replaceNotLetters(text) {
