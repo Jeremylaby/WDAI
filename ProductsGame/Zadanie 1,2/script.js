@@ -46,7 +46,7 @@ function displayElements(products) {
     }else{
       row = mainlist.lastElementChild;
     }
-    column.classList.add("col-sm");
+    column.classList.add("col-sm-6");
     cardTitle.textContent = product.title;
     cardImg.src = product.thumbnail;
     cardText.textContent = product.description;
