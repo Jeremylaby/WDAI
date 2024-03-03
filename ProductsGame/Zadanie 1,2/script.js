@@ -48,6 +48,7 @@ function displayElements(products) {
     card.style.marginTop="10px"
     column.classList.add("col-sm-6");
     column.classList.add("d-flex");
+    column.classList.add("align-items-baseline");
     column.classList.add("justify-content-center");
     cardTitle.textContent = product.title;
     cardImg.src = product.thumbnail;
