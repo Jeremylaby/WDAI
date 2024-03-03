@@ -42,11 +42,13 @@ function displayElements(products) {
     if(counter%2===0){
       row=document.createElement("div");
       row.classList.add("row");
-      row.style.marginTop="10px"
     }else{
       row = mainlist.lastElementChild;
     }
+    card.style.marginTop="10px"
     column.classList.add("col-sm-6");
+    column.classList.add("d-flex");
+    column.classList.add("justify-content-center");
     cardTitle.textContent = product.title;
     cardImg.src = product.thumbnail;
     cardText.textContent = product.description;
